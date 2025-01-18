@@ -3,7 +3,14 @@ import "@/styles/lines.css";
 import "@/styles/ham.css";
 import { cn } from "@/lib/utils";
 import { type Metadata } from "next";
-import { Oswald, Roboto, Playfair_Display, Italiana, Mrs_Saint_Delafield } from "next/font/google";
+import {
+  Oswald,
+  Roboto,
+  Playfair_Display,
+  Italiana,
+  Mrs_Saint_Delafield,
+  Cormorant,
+} from "next/font/google";
 import Providers from "@/app/Providers";
 
 export const metadata: Metadata = {
@@ -13,10 +20,16 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/Nur.svg" }],
 };
 
-const manrope = Oswald({
+const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-oswald",
   weight: ["200", "300", "400", "500", "600", "700"],
+});
+
+const cormorant = Cormorant({
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "700"],
 });
 
 const roboto = Roboto({
@@ -29,7 +42,7 @@ const italiana = Italiana({
   subsets: ["latin"],
   variable: "--font-italiana",
   weight: ["400"],
-})
+});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -41,7 +54,7 @@ const saint = Mrs_Saint_Delafield({
   subsets: ["latin"],
   variable: "--font-saint",
   weight: ["400"],
-})
+});
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -49,16 +62,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "theme-custom flex min-h-screen font-forum antialiased",
-          manrope.variable,
+          "theme-custom font-forum flex min-h-screen antialiased",
+          oswald.variable,
           roboto.variable,
           playfair.variable,
           italiana.variable,
           saint.variable,
+          cormorant.variable,
         )}
       >
         <Providers>{children}</Providers>
       </body>
-    </html >
+    </html>
   );
 }

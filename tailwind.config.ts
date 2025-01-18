@@ -11,7 +11,9 @@ export default {
         inter: ["var(--font-inter)", ...fontFamily.sans],
         italiana: ["var(--font-italiana)", ...fontFamily.sans],
         playfair: ["var(--font-playfair)", ...fontFamily.sans],
-        saint: ["var(--font-saint)", ...fontFamily.sans]
+        saint: ["var(--font-saint)", ...fontFamily.sans],
+        oswald: ["var(--font-oswald)", ...fontFamily.sans],
+        cormorant: ["var(--font-cormorant)", ...fontFamily.sans],
       },
       borderRadius: {
         lg: "var(--radius)",

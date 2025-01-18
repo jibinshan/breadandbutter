@@ -17,6 +17,11 @@ const Navbar = ({
   const pathname = usePathname();
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,135 +37,162 @@ const Navbar = ({
 
   return (
     <nav
-      className={`${position} top-5 z-50 flex h-[10vh] w-full max-w-[1300px] items-center bg-transparent p-4 transition-all duration-300 ease-in-out`}
+      className={`${position} top-5 z-50 h-[10vh] w-full px-4 pt-0 lg:px-20 lg:pt-6`}
     >
-      <div className="flex h-full w-full items-center justify-between">
-        <Link href="/" className="flex md:hidden">
-          <Image src="/Nur.svg" width={140} height={120} alt="logo" className="w-24" />
-        </Link>
-        {!isScrolled && (
-          <div className="hidden w-full flex-row items-center justify-center gap-[3.48rem] md:flex">
-            <div className="w-10/12 flex items-center justify-center">
-              <div className={cn("w-fit flex gap-12 items-center justify-center bg-white/30 backdrop-blur-md rounded-full px-12 py-4", pathname !== '/' && "bg-primary")} >
-                <Button
-                  asChild
-                  variant="link"
-                  className="px-0 uppercase text-accent font-semibold text-white font-playfair"
-                >
-                  <Link href="/">Home</Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="link"
-                  className="px-0 uppercase text-accent font-semibold text-white font-playfair"
-                >
-                  <Link href="/menu">Menu</Link>
-                </Button>
-                {/* <Button
-              asChild
-              variant="link"
-              className="px-0 uppercase text-accent"
+      {/*big screen */}
+      <div className="hidden lg:block">
+        <div className="flex flex-row items-start justify-between">
+          <div className="flex flex-col gap-3">
+            <Link
+              href={"#"}
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
             >
-              <Link href="/about-us">About</Link>
-            </Button> */}
-
-                <Image
-                  src='/Nur.svg'
-                  width={74}
-                  height={38}
-                  alt="logo"
-                />
-                <Button
-                  asChild
-                  variant="link"
-                  className="px-0 uppercase text-accent font-semibold text-white font-playfair"
-                >
-                  <Link href="/table-booking">Reservations</Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="link"
-                  className="px-0 uppercase text-accent font-semibold text-white font-playfair"
-                >
-                  <Link href="/contact">Contact</Link>
-                </Button>
-              </div>
-
-            </div>
-            {/* <Button
-              asChild
-              variant="link"
-              className="px-0 uppercase text-accent"
+              Home
+            </Link>
+            <Link
+              href={"#"}
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
             >
-              <Link href="/gift-voucher">Gift Voucher</Link>
-            </Button> */}
-            {/* <Link href="/table-booking">
-              <Button
-                className="group h-11 items-center gap-[1.19rem] rounded-full font-semibold uppercase bg-white/30 backdrop-blur-md font-playfair px-6 py-7"
-                variant="secondary"
-              >
-                Book Table
-                <Icons.rightArrow className="duration-300 ease-in-out group-hover:translate-x-1" />
-              </Button>
-            </Link> */}
-          </div>
-        )
-        }
-        {/* {!isScrolled && (
-          <div className="hidden items-center justify-center gap-[2.5rem] md:flex">
-            {pathname !== "/" && (
-              <CartSheet>
-                <Button
-                  variant="ghost"
-                  className="px-1 py-1 hover:bg-transparent"
-                  disabled={!BetaMenuActive}
-                >
-                  <span className="sr-only">Shopping Cart</span>
-                  <Icons.shoppingCart />
-                </Button>
-              </CartSheet>
-            )}
-            <Link href="/menu">
-              <Button
-                className="group h-11 items-center gap-[1.19rem] rounded-full bg-[#ccad64] font-semibold uppercase text-[#282828] hover:bg-primary"
-                variant="secondary"
-              >
-                View Menu
-                <Icons.rightArrow className="duration-300 ease-in-out group-hover:translate-x-1" />
-              </Button>
+              About
+            </Link>
+            <Link
+              href={"#"}
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+            >
+              Menu
+            </Link>
+            <Link
+              href={"#"}
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+            >
+              Reservation
+            </Link>
+            <Link
+              href={"#"}
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+            >
+              Order Online
+            </Link>
+            <Link
+              href={"#"}
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+            >
+              Contact Us
             </Link>
           </div>
-        )} */}
-        {
-          isScrolled ? (
-            <Sidebar>
-              <Button
-                variant="ghost"
-                className="flex px-1 py-1 text-primary hover:bg-transparent hover:text-primary"
+          <Link href={"#"}>
+            <Image
+              src={"/images/hero/logo.svg"}
+              width={281}
+              height={74}
+              alt="logo"
+              className="h-[64px] w-[230px]"
+            />
+          </Link>
+          <Button className="font-oswald rounded-none border border-white bg-transparent px-4 py-6 text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]">
+            Book Table
+          </Button>
+        </div>
+      </div>
+
+      {/*mobile screen */}
+      <div className="block lg:hidden">
+        <div className="flex flex-row items-center justify-between">
+          <div>
+            <Link href={"#"}>
+              <Image
+                src={"/images/hero/logo.svg"}
+                width={281}
+                height={74}
+                alt="logo"
+                className="h-[40px] w-[100px]"
+              />
+            </Link>
+          </div>
+          <div>
+            <button onClick={toggleMenu}>
+              <EqualizerIcon />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className={`fixed right-0 top-0 h-full w-64 transform bg-black shadow-lg transition-transform duration-300 ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          } z-40`}
+        >
+          <button
+            className="absolute right-4 top-4 text-2xl text-white"
+            onClick={toggleMenu}
+          >
+            ✕
+          </button>
+
+          <ul className="mt-16 flex flex-col items-start gap-6 px-6 text-white">
+            <li>
+              <Link
+                href={"#"}
+                className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
               >
-                <span className="sr-only">Menu</span>
-                <Icons.menu />
-              </Button>
-            </Sidebar>
-          ) : (
-            <Sidebar>
-              <Button
-                variant="ghost"
-                className="px-1 py-1 text-primary hover:bg-transparent hover:text-primary md:hidden"
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"#"}
+                className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
               >
-                <span className="sr-only">Menu</span>
-                <EqualizerIcon />
-              </Button>
-            </Sidebar>
-          )
-        }
-      </div >
-    </nav >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"#"}
+                className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              >
+                Menu
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"#"}
+                className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              >
+                Reservation
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"#"}
+                className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              >
+                Order Online
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"#"}
+                className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              >
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {isOpen && (
+          <div
+            className="fixed inset-0 z-30 bg-black bg-opacity-50"
+            onClick={toggleMenu}
+          ></div>
+        )}
+      </div>
+    </nav>
   );
 };
 
 export default Navbar;
-
 
 const EqualizerIcon: React.FC = () => {
   return (
