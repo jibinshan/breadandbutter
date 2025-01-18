@@ -1,8 +1,28 @@
+"use client";
+import { gsap } from "gsap";
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 
+import { useEffect } from "react";
+import { ScrollTrigger } from "gsap/all";
+
 const Feel: React.FC = () => {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".box", {
+      y: 500,
+      scrollTrigger: {
+        trigger: ".box",
+        start: "top center",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  }, []);
+
   return (
     <section className="relative h-full w-full bg-[#FFF6EB] px-4 pb-12 lg:px-[70px] lg:pb-[550px] xl:px-[120px] 2xl:px-[160px]">
       <div className="absolute bottom-4 left-0 right-0 hidden items-center justify-between px-36 lg:flex">
@@ -36,7 +56,7 @@ const Feel: React.FC = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center gap-4">
+      <div className="box flex flex-col items-center justify-center gap-4">
         <div className="flex flex-col items-center gap-2">
           <h1 className="font-oswald text-center text-5xl font-[400] uppercase text-[#0D0D0D] lg:text-8xl lg:leading-[110px]">
             Feel Our Flavors

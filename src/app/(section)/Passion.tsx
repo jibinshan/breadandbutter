@@ -1,8 +1,32 @@
+"use client";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 
 const Passion: React.FC = () => {
+  const imageRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    if (imageRef.current) {
+      gsap.to(imageRef.current, {
+        x: 500,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: "power2.inOut",
+      });
+    }
+    gsap.to(imageRef.current, {
+      x: -500,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "power2.inOut",
+    });
+  }, []);
+
   return (
     <section className="h-full w-full bg-[#FFF6EB] pb-4 pt-12 lg:pb-8 lg:pt-20">
       <div className="flex flex-col items-center justify-center gap-5">
@@ -20,6 +44,7 @@ const Passion: React.FC = () => {
         </div>
         <div className="h-full w-full pt-8">
           <Image
+            ref={imageRef}
             src={"/images/passion/frame.png"}
             width={1920}
             height={357}
