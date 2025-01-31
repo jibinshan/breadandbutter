@@ -92,18 +92,23 @@
 
   /* menu Checkout Start */
 
-  --menubackground: 42, 38.46%, 94.9%;
-  --menuforeground: 0, 0%, 100%;
-  --menuprimary: 14, 48%, 46%;
-  --menusecondary: 344 45% 45%;
+  --menubackground: 0, 0%, 3%;
+  --menuforeground: 0, 0%, 0%;
+  --menuprimary: 42, 50%, 60%;
+  --menusecondary: 35, 84%, 90%;
   --buttonhover: 42, 73%, 41%;
-  --itembackground: 0, 0%, 100%;
+  --itembackground: 0, 0%, 6%;
   --menuprimaryforeground: 36, 18%, 70%;
   --menusecondaryforeground: 0, 0%, 20%;
   --itemdescription: 36, 2%, 47%;
   --itembutton: 0, 0%, 9%;
   --buttondisabled: 0, 0%, 17%;
-  --mobilebg: 42, 38.46%, 94.9%;
+  --mobilebg: 0, 0%, 0%;
+  --menuwhite: 0, 0%, 100%;
+  --borderinput: 0, 0%, 7.45%;
+  --tabbg: 0, 0%, 8.63%;
+  --inputbg: 0, 0%, 4.71%;
+  --placeholder: 36, 18%, 70%;
 }
 
 /* Scrolling Text Start */

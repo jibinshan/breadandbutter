@@ -14,9 +14,8 @@ import {
 import Providers from "@/app/Providers";
 
 export const metadata: Metadata = {
-  title: "Nur Cafe | Best Cafe Manchester | Breakfast Lunch",
-  description:
-    "Nur Cafe Manchester was born from a passion for bringing the finest cuts of beef to the table, with a commitment to sustainability and premium quality.Best Cafe In Manchester",
+  title: "Bread and Butter",
+  description: "Bread and Butter",
   icons: [{ rel: "icon", url: "/Nur.svg" }],
 };
 
