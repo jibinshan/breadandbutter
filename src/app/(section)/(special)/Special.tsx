@@ -1,7 +1,5 @@
 "use client";
 import EmblaCarousel from "@/app/(section)/(special)/MenuCarousel";
-import { Icons } from "@/components/Icon";
-import { Button } from "@/components/ui/button";
 import { useRestaurant } from "@/context/RestaurantContext";
 import type { EmblaOptionsType } from "embla-carousel";
 import Image from "next/image";
@@ -17,14 +15,7 @@ const Special = ({}) => {
         <div className="line"></div>
         <div className="line"></div>
       </div>
-      <div
-        className="absolute left-0 top-0 h-full w-full overflow-hidden"
-        style={{
-          backgroundImage: "url('/images/home/frame.png')",
-          backgroundSize: "contain",
-          backgroundRepeat: "repeat",
-        }}
-      ></div>
+      <div className="absolute left-0 top-0 h-full w-full overflow-hidden"></div>
       <div className="flex h-full w-full max-w-[1300px] flex-col items-center justify-center gap-4 py-12">
         <div className="flex w-full flex-col items-center justify-between gap-3 md:flex-row">
           <div className="flex flex-col gap-2">

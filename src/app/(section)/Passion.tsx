@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const Passion: React.FC = () => {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -31,7 +32,7 @@ const Passion: React.FC = () => {
     <section className="h-full w-full bg-[#FFF6EB] pb-4 pt-12 lg:pb-8 lg:pt-20">
       <div className="flex flex-col items-center justify-center gap-5">
         <div className="flex flex-col items-center gap-1">
-          <h1 className="font-oswald text-center text-5xl font-[400] uppercase text-[#0D0D0D] lg:text-8xl lg:leading-[115px]">
+          <h1 className="text-center font-oswald text-5xl font-[400] uppercase text-[#0D0D0D] lg:text-8xl lg:leading-[115px]">
             Flavor Passion
           </h1>
           <Image
@@ -53,19 +54,21 @@ const Passion: React.FC = () => {
           />
         </div>
         <div className="flex flex-col items-center gap-4 pt-4">
-          <p className="font-cormorant w-full max-w-[400px] text-center text-base font-[500] uppercase leading-[110%] text-[#000]">
+          <p className="w-full max-w-[400px] text-center font-cormorant text-base font-[500] uppercase leading-[110%] text-[#000]">
             Bread & Butter is a brand new café situated in Haggerston. Whether
             taking away or eating in, our dedication to quality and variety is
             likely to impress!
           </p>
           <div>
-            <Button className="font-oswald rounded-none bg-[#AE945A] px-7 py-6 text-center text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]">
-              Book Table
-            </Button>
+            <Link href={"/table-booking"}>
+              <Button className="rounded-none bg-[#AE945A] px-7 py-6 text-center font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]">
+                Book Table
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="pt-12 lg:pt-24">
-          <p className="font-oswald pt- w-full overflow-hidden text-ellipsis whitespace-nowrap bg-black object-cover py-2 text-sm font-[400] uppercase tracking-[3px] text-[#fff6eb] lg:text-base">
+          <p className="pt- w-full overflow-hidden text-ellipsis whitespace-nowrap bg-black object-cover py-2 font-oswald text-sm font-[400] uppercase tracking-[3px] text-[#fff6eb] lg:text-base">
             FARMHOUSE CAFE / bread & butter / FARMHOUSE CAFE / FARMHOUSE CAFE /
             bread & butter / FARMHOUSE CAFE / FARMHOUSE CAFE / bread & butter /
             FARMHOUSE CAFE / FARMHOUSE CAFE / bread & butter / FARMHOUSE CAFE

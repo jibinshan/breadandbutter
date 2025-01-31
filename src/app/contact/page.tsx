@@ -1,13 +1,13 @@
 import Contact from "@/app/contact/(section)/Contact";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import NavbarS from "@/components/NavbarS";
 
-const page = ({ }) => {
+const page = ({}) => {
   return (
     <main className="relative flex h-full w-full">
       <div className="flex h-full w-full flex-col items-center justify-center bg-[#fff5e5]">
-        <Navbar position="absolute" />
-        <div className="w-full h-[15vh] bg-primary" id="hero"></div>
+        <NavbarS position="absolute" />
+        <div className="h-[15vh] w-full bg-[#fff5e5]" id="hero"></div>
         <Contact />
         <Footer />
       </div>

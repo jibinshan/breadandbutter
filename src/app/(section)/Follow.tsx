@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Follow: React.FC = () => {
@@ -15,7 +16,7 @@ const Follow: React.FC = () => {
           }}
         >
           <div className="flex flex-col items-center gap-2">
-            <h1 className="font-oswald text-center text-5xl font-[400] uppercase text-[#fff] lg:text-8xl lg:leading-[105px]">
+            <h1 className="text-center font-oswald text-5xl font-[400] uppercase text-[#fff] lg:text-8xl lg:leading-[105px]">
               Follow us
             </h1>
             <Image
@@ -26,9 +27,14 @@ const Follow: React.FC = () => {
               className="h-2 w-[150px] object-cover lg:w-[300px]"
             />
           </div>
-          <p className="font-oswald text-center text-xl font-[400] uppercase text-[#fff] lg:text-3xl">
-            @bread&butter
-          </p>
+          <Link
+            href={"https://www.instagram.com/breadandbuttercafe/?hl=en"}
+            target="_blank"
+          >
+            <p className="text-center font-oswald text-xl font-[400] uppercase text-[#fff] lg:text-3xl">
+              @bread&butter
+            </p>
+          </Link>
         </div>
         <div>
           <Image

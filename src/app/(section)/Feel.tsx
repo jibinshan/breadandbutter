@@ -7,6 +7,7 @@ import React from "react";
 
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/all";
+import Link from "next/link";
 
 const Feel: React.FC = () => {
   useEffect(() => {
@@ -58,7 +59,7 @@ const Feel: React.FC = () => {
       </div>
       <div className="box flex flex-col items-center justify-center gap-4">
         <div className="flex flex-col items-center gap-2">
-          <h1 className="font-oswald text-center text-5xl font-[400] uppercase text-[#0D0D0D] lg:text-8xl lg:leading-[110px]">
+          <h1 className="text-center font-oswald text-5xl font-[400] uppercase text-[#0D0D0D] lg:text-8xl lg:leading-[110px]">
             Feel Our Flavors
           </h1>
           <Image
@@ -70,9 +71,11 @@ const Feel: React.FC = () => {
           />
         </div>
         <div>
-          <Button className="font-oswald rounded-none bg-[#AE945A] px-7 py-6 text-center text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]">
-            View menu
-          </Button>
+          <Link href={"/menu"}>
+            <Button className="rounded-none bg-[#AE945A] px-7 py-6 text-center font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]">
+              View menu
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="block pt-12 lg:hidden">

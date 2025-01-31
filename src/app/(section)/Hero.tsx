@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Hero: React.FC = () => {
@@ -22,7 +23,7 @@ const Hero: React.FC = () => {
         muted
       ></video>
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center gap-3 text-white">
+      <div className="relative flex h-full flex-col items-center justify-center gap-3 text-white">
         <h1 className="font-oswald text-5xl font-[400] uppercase text-[#ffffff] lg:text-8xl lg:leading-[130px]">
           bread & butter
         </h1>
@@ -33,12 +34,14 @@ const Hero: React.FC = () => {
           alt="underline"
           className="w-[300px] object-cover lg:w-[600px]"
         />
-        <h4 className="font-oswald text-center text-lg font-[400] uppercase leading-[44px] tracking-[12px] lg:text-xl lg:tracking-[20px]">
+        <h4 className="text-center font-oswald text-lg font-[400] uppercase leading-[44px] tracking-[12px] lg:text-xl lg:tracking-[20px]">
           fARMHOUSE CAFE
         </h4>
-        <Button className="font-oswald rounded-none bg-white px-7 py-6 text-lg font-[400] leading-[25px] tracking-[1px] text-[#000000] lg:mt-4">
-          View Menu
-        </Button>
+        <Link href={"/menu"}>
+          <Button className="relative z-40 rounded-none bg-white px-7 py-6 font-oswald text-lg font-[400] leading-[25px] tracking-[1px] text-[#000000] lg:mt-4">
+            View Menu
+          </Button>
+        </Link>
       </div>
 
       <div className="z-5 absolute left-0 top-0 h-full w-full bg-black bg-opacity-50"></div>

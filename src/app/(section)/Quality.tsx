@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Quality: React.FC = () => {
@@ -11,7 +12,7 @@ const Quality: React.FC = () => {
             src={"/images/quality/open.png"}
             width={539}
             height={344}
-            alt="underline"
+            alt="open"
             className="w-[350px] object-cover"
           />
         </div>
@@ -21,7 +22,7 @@ const Quality: React.FC = () => {
             src={"/images/quality/cake.png"}
             width={496}
             height={358}
-            alt="underline"
+            alt="cake"
             className="w-[350px] object-cover"
           />
         </div>
@@ -31,7 +32,7 @@ const Quality: React.FC = () => {
             src={"/images/quality/food.png"}
             width={320}
             height={344}
-            alt="underline"
+            alt="food"
             className="w-[230px] object-cover"
           />
         </div>
@@ -57,7 +58,7 @@ const Quality: React.FC = () => {
                 About Us
               </h6>
               <div className="flex flex-col gap-6">
-                <p className="font-cormorant w-full max-w-[320px] text-sm font-[500] uppercase leading-[130%] text-[#000]">
+                <p className="w-full max-w-[320px] font-cormorant text-sm font-[500] uppercase leading-[130%] text-[#000]">
                   At Bread & Butter, we believe great food starts with the
                   finest ingredients. Born from a passion for quality and
                   community, our café serves as a haven for Haggerston locals
@@ -66,9 +67,11 @@ const Quality: React.FC = () => {
                   and savor the charm of a neighborhood café that truly cares.
                 </p>
                 <div>
-                  <Button className="font-oswald rounded-none bg-[#AE945A] px-7 py-6 text-center text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]">
-                    View Menu
-                  </Button>
+                  <Link href={"/menu"}>
+                    <Button className="rounded-none bg-[#AE945A] px-7 py-6 text-center font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]">
+                      View Menu
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

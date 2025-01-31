@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const Navbar = ({
+const NavbarS = ({
   position = "static",
 }: {
   position?: "static" | "fixed" | "absolute";
@@ -17,60 +17,52 @@ const Navbar = ({
 
   return (
     <nav
-      className={`${position} top-5 z-50 h-[10vh] w-full px-4 pt-0 lg:px-20 lg:pt-6`}
+      className={`${position} top-0 z-50 h-[12vh] w-full bg-[#200F0F] px-4 pt-0 md:h-[15vh] lg:px-20 lg:pt-6`}
     >
       {/*big screen */}
       <div className="hidden lg:block">
-        <div className="flex flex-row items-start justify-between">
-          <div className="flex flex-col gap-3">
+        <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-row items-center justify-center gap-20">
             <Link
               href={"/"}
-              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]"
             >
               Home
             </Link>
             <Link
               href={"/about-us"}
-              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]"
             >
               About
             </Link>
             <Link
               href={"/menu"}
-              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]"
             >
               Menu
             </Link>
             <Link
               href={"/table-booking"}
-              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]"
             >
               Reservation
             </Link>
             <Link
               href={"/menu"}
-              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]"
             >
               Order Online
             </Link>
             <Link
               href={"/contact"}
-              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]"
+              className="font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]"
             >
               Contact Us
             </Link>
           </div>
-          <Link href={"/"}>
-            <Image
-              src={"/images/hero/logo.svg"}
-              width={281}
-              height={74}
-              alt="logo"
-              className="h-[64px] w-[230px]"
-            />
-          </Link>
+
           <Link href={"/table-booking"}>
-            <Button className="rounded-none border border-white bg-transparent px-4 py-6 font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#ffffff]">
+            <Button className="rounded-none border border-[#fff] bg-transparent px-4 py-6 font-oswald text-base font-[400] uppercase leading-[25px] tracking-[1px] text-[#fff]">
               Book Table
             </Button>
           </Link>
@@ -78,7 +70,7 @@ const Navbar = ({
       </div>
 
       {/*mobile screen */}
-      <div className="block lg:hidden">
+      <div className="block pt-4 lg:hidden">
         <div className="flex flex-row items-center justify-between">
           <div>
             <Link href={"/"}>
@@ -174,7 +166,7 @@ const Navbar = ({
   );
 };
 
-export default Navbar;
+export default NavbarS;
 
 const EqualizerIcon: React.FC = () => {
   return (

@@ -1,19 +1,19 @@
 import Menu from "@/app/menu/Menu";
 import MenuMobile from "./MenuMobile";
-import Navbar from "@/components/Navbar";
+import NavbarS from "@/components/NavbarS";
 
 export default function MenuPage() {
-    return (
-        <section className="w-full flex flex-col justify-start items-center bg-menubackground">
-            <div className="hidden md:block w-full">
-                <Navbar position="static" />
-            </div>
-            <div className="hidden w-full justify-center items-center md:flex">
-                <Menu />
-            </div>
-            <div className="flex w-full justify-center items-center md:hidden">
-                <MenuMobile />
-            </div>
-        </section>
-    );
+  return (
+    <section className="flex w-full flex-col items-center justify-start bg-[#FFF6EB]">
+      <div className="hidden w-full justify-center md:flex">
+        <NavbarS position="static" />
+      </div>
+      <div className="hidden w-full items-center justify-center md:mt-12 md:flex">
+        <Menu />
+      </div>
+      <div className="flex w-full items-center justify-center md:hidden">
+        <MenuMobile />
+      </div>
+    </section>
+  );
 }
