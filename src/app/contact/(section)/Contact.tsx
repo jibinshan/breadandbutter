@@ -262,5 +262,3 @@ const Contact = ({}) => {
 };
 
 export default Contact;
-
-// /images/contact/contact.png

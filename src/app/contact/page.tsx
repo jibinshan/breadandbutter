@@ -1,4 +1,5 @@
 import Contact from "@/app/contact/(section)/Contact";
+import FAQ from "@/components/Faq";
 import Footer from "@/components/Footer";
 import NavbarS from "@/components/NavbarS";
 
@@ -9,6 +10,7 @@ const page = ({}) => {
         <NavbarS position="absolute" />
         <div className="h-[15vh] w-full bg-[#fff5e5]" id="hero"></div>
         <Contact />
+        <FAQ />
         <Footer />
       </div>
     </main>
