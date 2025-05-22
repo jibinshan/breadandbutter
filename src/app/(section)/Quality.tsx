@@ -59,12 +59,13 @@ const Quality: React.FC = () => {
               </h6>
               <div className="flex flex-col gap-6">
                 <p className="w-full max-w-[320px] font-cormorant text-sm font-[500] uppercase leading-[130%] text-[#000]">
-                  At Bread & Butter, we believe great food starts with the
+                  At Bread & Butter, we believe that great food begins with the
                   finest ingredients. Born from a passion for quality and
-                  community, our café serves as a haven for Haggerston locals
+                  community, our café is a welcoming haven for Haggerston locals
                   and visitors alike. From freshly brewed coffee to handcrafted
-                  sandwiches, every item on our menu is a labor of love. Step in
-                  and savor the charm of a neighborhood café that truly cares.
+                  sandwiches, every item on our menu is a true labour of love.
+                  Step inside and savour the charm of a neighbourhood café that
+                  genuinely cares.
                 </p>
                 <div>
                   <Link href={"/menu"}>
